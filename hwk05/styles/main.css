@@ -1,0 +1,215 @@
+/* ===== General ===== */
+
+* {
+	font-family: sans-serif;
+	user-select: none;
+}
+
+h2 {
+	font-size: 1.5rem;
+}
+
+[hidden] {
+	display: none !important;
+}
+
+html {
+	width: 100vw;
+	min-height: 100vh;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+}
+
+button {
+	height: fit-content;
+	width: fit-content;
+	border: none;
+	background-color: #FF0000;
+	color: white;
+	padding: .75rem 1rem;
+	border-radius: .5rem;
+	cursor: pointer;
+	outline: none;
+	font-size: 1.25rem;
+}
+
+button[disabled] {
+	filter: grayscale(1);
+	cursor: wait;
+}
+
+button:hover {
+	transform: scale(1.05);
+	background-color: #f5f5f5;
+	color: #FF0000;
+}
+
+/* ===== HUD ===== */
+
+#hud {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem;
+}
+
+#hud > * {
+	width: 100%;
+}
+
+#crosshair {
+	background-image: url(../assets/crosshair.webp);
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: fixed;
+	height: 5rem;
+	width: 5rem;
+	top: calc(50% - 2.5rem);
+	left: calc(50% - 2.5rem);
+}
+
+#score {
+	height: fit-content;
+	width: fit-content;
+	background-color: white;
+	font-size: 2rem;
+	color: red;
+	font-weight: bold;
+	padding: 1rem;
+	border-radius: 0.25rem;
+}
+
+#controls {
+	display: flex;
+	flex-direction: row;
+}
+
+#controls > * {
+	margin-right: 1rem;
+}
+
+#controls > *:last-of-type {
+	margin-right: 0;
+}
+
+/* ===== Modals ===== */
+
+#modal_wrap {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #0095ff;
+	padding: 1rem;
+	cursor: pointer;
+}
+
+.modal {
+	height: fit-content;
+	width: fit-content;
+	max-height: 65vh;
+    overflow-y: scroll;
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	padding: 1rem;
+	border-radius: .5rem;
+	margin-bottom: 1rem;
+	width: 100%;
+	max-width: 40rem;
+	cursor: default;
+}
+
+#modal_close {
+	position: fixed;
+	top: 0;
+	right: 0;
+	margin: 1rem;
+}
+
+.modal:last-of-type {
+	margin-bottom: 0;
+}
+
+.modal > * {
+	margin: .5rem 0;
+}
+
+.modal button {
+	margin: auto;
+}
+
+h1.title {
+	color: #FF0000;
+}
+
+.title {
+	font-weight: bold;
+	text-align: center;
+}
+
+/* ===== Cheats Modal ===== */
+
+#modal_cheats {
+	max-width: 70rem;
+}
+
+.setting {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem;
+	border-radius: .5rem;
+	background-color: #f3f3f3;
+}
+
+.setting:nth-of-type(even) {
+	background-color: #dadada;
+}
+
+.setting h2.title {
+	margin-right: auto;
+}
+
+.setting_main {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.setting > * {
+	padding:  0.5rem;
+}
+
+.setting_description {
+	width: 75%;
+	font-size: 1.25rem;
+	padding-right: 1rem;
+}
+
+.setting_control {
+	width: 25%;
+}
+
+input[type="range"] {
+	width: 100%;
+	cursor: ew-resize;
+}

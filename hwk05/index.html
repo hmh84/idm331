@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>IDM 331 - HWK 05 - Hunter Hampton</title>
+	<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+	<link rel="stylesheet" href="styles/normalize.css">
+	<link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+	<div id="wrapper">
+		<div id="canvas">
+			<div id="hud">
+				<div id="score"></div>
+				<div id="crosshair"></div>
+				<div id="controls">
+					<button id="mute_btn">Mute</button>
+					<button id="cheats_btn">Cheats</button>
+				</div>
+			</div>
+			<div id="modal_wrap">
+				<button id="modal_close" hidden>Close</button>
+				<div class="modal" id="modal_intro">
+					<h1 class="title">Welcome to Anytown Shooting Gallery!</h1>
+					<h2 class="title">How to Play</h2>
+					<p>Use WASD to move. Press SPACE to shoot.</p>
+					<button id="start_btn" disabled>Loading Assets...</button>
+				</div>
+				<div class="modal" id="modal_cheats" hidden>
+					<h1 class="title">Cheats</h1>
+					<div class="setting">
+						<h2 class="title">Free Movement</h2>
+						<div class="setting_main">
+							<p class="setting_description">Allows free movement and rotation with the use of both WASD
+								and &#8593;
+								&#8595; &#8592; &#8594;</p>
+							<button class="setting_control" id="free_controls">Free Movement</button>
+						</div>
+					</div>
+					<div class="setting">
+						<h2 class="title">Bullet Speed</h2>
+						<div class="setting_main">
+							<p class="setting_description">Changes speed of your bullet in the air.</p>
+							<div class="setting_control">
+								<label for="bulletSpeed"></label>
+								<input type="range" name="bulletSpeed" id="bulletSpeed" min="1" max="25">
+							</div>
+						</div>
+					</div>
+					<div class="setting">
+						<h2 class="title">Reload Speed</h2>
+						<div class="setting_main">
+							<p class="setting_description">Changes speed of your gun's reload time.</p>
+							<div class="setting_control">
+								<label for="reloadSpeed"></label>
+								<input type="range" name="reloadSpeed" id="reloadSpeed" min="100" max="1500">
+							</div>
+						</div>
+					</div>
+					<div class="setting">
+						<h2 class="title">Duck & Target Speed</h2>
+						<div class="setting_main">
+							<p class="setting_description">Changes speed of the ducks and targets.</p>
+							<div class="setting_control">
+								<label for="rowSpeed"></label>
+								<input type="range" name="rowSpeed" id="rowSpeed" min=".2" max="5.2">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://stemkoski.github.io/Three.js/js/THREEx.KeyboardState.js" defer></script>
+	<script src="scripts/main.js" type="module"></script>
+</body>
+
+</html>
