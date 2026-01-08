@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Meta -->
+	<meta property="og:title" content="Anytown, USA Shooting Gallery">
+	<meta property="og:image" content="./assets/preview.png">
+	<meta property="og:description" content="Browser based VR experience of an Anytown, USA Shooting Gallery">
+	<title>Anytown, USA Shooting Gallery</title>
+	<!-- Assets -->
+	<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+	<link rel="stylesheet" href="./styles/normalize.css">
+	<link rel="stylesheet" href="./styles/main.css">
+</head>
+
+<body>
+	<div id="wrapper">
+		<div id="canvas">
+			<div id="hud">
+				<div id="score"></div>
+				<div id="crosshair"></div>
+				<div id="controls">
+					<div class="controls_column">
+						<button id="intro_btn">Instructions</button>
+						<button id="cheats_btn">Cheats</button>
+					</div>
+					<div class="controls_column">
+						<button id="mute_sfx">Toggle SFX</button>
+						<button id="mute_bgm">Toggle Music</button>
+					</div>
+				</div>
+			</div>
+			<div id="modal_wrap">
+				<button id="modal_close" hidden>Close</button>
+				<div class="modal" id="modal_endGame" hidden>
+					<h2 class="title">Ducks have feelings too you know</h2>
+					<img id="sad-duck-image" src="./assets/sad-duck.jpg">
+					<p>Consider making a monthly donation to the National Wildlife Federation at <a target="_blank"
+							href="https://support.nwf.org/page/26472/donate/">https://support.nwf.org/page/26472/donate/</a>
+					</p>
+				</div>
+				<div class="modal" id="modal_intro">
+					<h1 class="title">Welcome to Anytown, USA Shooting Gallery!</h1>
+					<h2 class="title">How to Play</h2>
+					<div class="row">
+						<p>Shoot the targets to earn points.</p>
+						<p><img id="target-icon" src="./assets/target-icon.svg"></p>
+					</div>
+					<div class="row">
+						<p>Shooting the ducks will cost you points.</p>
+						<p><img id="ducky-icon" src="./assets/ducky-icon.svg"></p>
+					</div>
+					<h2 class="title">Controls</h2>
+					<div class="row">
+						<p>Use WASD to move.</p>
+						<img id="wsad-icon" src="./assets/wsad.svg">
+					</div>
+					<div class="row">
+						<p>Use Left and Right arrows to rotate.</p>
+						<img id="lr-arrows-icon" src="./assets/lr-arrows.svg">
+					</div>
+					<div class="row">
+						<p>Press SPACE to shoot.</p>
+						<img id="spacebar-icon" src="./assets/spacebar.svg">
+					</div>
+					<button id="start_btn" disabled>Loading Assets...</button>
+				</div>
+				<div class="modal" id="modal_cheats" hidden>
+					<h1 class="title">Cheats</h1>
+					<div class="setting">
+						<h2 class="title">Free Movement</h2>
+						<div class="setting_main">
+							<p class="setting_description">Allow free movement with the use of &#8593; &#8595; arrows.
+							</p>
+							<button class="setting_control" id="free_controls">Free Movement</button>
+						</div>
+					</div>
+					<div class="setting">
+						<h2 class="title">Bullet Speed</h2>
+						<div class="setting_main">
+							<p class="setting_description">Speed your bullets travel.</p>
+							<div class="setting_control">
+								<label for="bulletSpeed"></label>
+								<input type="range" name="bulletSpeed" id="bulletSpeed" min="1" max="15" step="1">
+							</div>
+						</div>
+					</div>
+					<div class="setting">
+						<h2 class="title">Reload Speed</h2>
+						<div class="setting_main">
+							<p class="setting_description">Speed of your gun's reload time.</p>
+							<div class="setting_control">
+								<label for="reloadSpeed"></label>
+								<input type="range" name="reloadSpeed" id="reloadSpeed" min="50" max="1500" step="50">
+							</div>
+						</div>
+					</div>
+					<div class="setting">
+						<h2 class="title">Duck & Target Speed</h2>
+						<div class="setting_main">
+							<p class="setting_description">Movement speed of the ducks and targets.</p>
+							<div class="setting_control">
+								<label for="rowSpeed"></label>
+								<input type="range" name="rowSpeed" id="rowSpeed" min="0" max="5.5" step=".25">
+							</div>
+						</div>
+					</div>
+					<div class="setting" hidden>
+						<h2 class="title">Walking Speed</h2>
+						<div class="setting_main">
+							<p class="setting_description">Your walking speed. <strong>This feature is
+									experimental.</strong></p>
+							<div class="setting_control">
+								<label for="moveSpeed"></label>
+								<input type="range" name="moveSpeed" id="moveSpeed" min="0" max="3" step=".1">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://stemkoski.github.io/Three.js/js/THREEx.KeyboardState.js" defer></script>
+	<script src="./scripts/main.js" type="module"></script>
+</body>
+
+</html>
