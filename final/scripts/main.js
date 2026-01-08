@@ -25,10 +25,8 @@ const
 
 // ===== Imports =====
 
-import * as THREE from '../node_modules/three/build/three.module.js';
-// import { GLTFLoader } from '../node_modules/three/examples/jsm/loaders/GLTFLoader.js';
-import { OBJLoader } from '../node_modules/three/examples/jsm/loaders/OBJLoader.js';
-import { OrbitControls } from '../node_modules/three/examples/jsm/controls/OrbitControls.js';
+import * as THREE from '../../node_modules/three/build/three.module.js';
+import { OBJLoader } from '../../node_modules/three/examples/jsm/loaders/OBJLoader.js';
 
 const keyboard = new THREEx.KeyboardState();
 

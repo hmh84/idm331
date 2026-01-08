@@ -2,9 +2,9 @@ const
   docQ = document.querySelector.bind(document),
   docQA = document.querySelectorAll.bind(document);
 
-import * as THREE from '../node_modules/three/build/three.module.js';
-import { GLTFLoader } from '../node_modules/three/examples/jsm/loaders/GLTFLoader.js';
-import { OrbitControls } from '../node_modules/three/examples/jsm/controls/OrbitControls.js';
+import * as THREE from '../../node_modules/three/build/three.module.js';
+import { GLTFLoader } from '../../node_modules/three/examples/jsm/loaders/GLTFLoader.js';
+import { OrbitControls } from '../../node_modules/three/examples/jsm/controls/OrbitControls.js';
 const myWorldObj = document.getElementById('myWorld');
 
 // Scene
@@ -44,22 +44,6 @@ let controlsObj = new OrbitControls(camera, myWorldObj);
 controlsObj.addEventListener('change', controlsRender);
 
 // ===== Objects & Animation =====
-
-const staticObjects = [
-  {
-    name: 'sun',
-    x: 0,
-    y: 0,
-    z: 30
-  }
-]
-
-function createSphere() {
-  const geometry = new THREE.SphereGeometry(5, 32, 32);
-  const material = new THREE.MeshBasicMaterial({ color: 0xFF1111 });
-  const sphere = new THREE.Mesh(geometry, material);
-  scene.add(sphere);
-}
 
 const planes = [
   // 1st row
@@ -104,7 +88,7 @@ const planes = [
     startPosZ: 850,
     startPosX: 15,
   },
-]
+];
 
 let animateReady = false;
 let i = 0;
@@ -152,7 +136,7 @@ let paused = true;
 let mute = true;
 const loadingModal = docQ('#loading');
 const controlsModal = docQ('#controls');
-const beginAnimBtn = docQ('#beginAnimBtn')
+const beginAnimBtn = docQ('#beginAnimBtn');
 
 beginAnimBtn.addEventListener('click', () => {
   paused = false;
